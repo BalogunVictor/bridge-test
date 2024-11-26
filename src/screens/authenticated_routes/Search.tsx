@@ -127,14 +127,16 @@ const Search = () => {
           {/* Map Dummy Search History */}
           <View style={styles.historyList}>
             {searchHistory.map((query, index) => (
-              <CustomText
-                key={index}
-                text={query}
-                size={14}
-                weight={400}
-                color={colors.very_light_grey}
-                style={styles.historyItem}
-              />
+              <TouchableOpacity key={index} onPress={() => setSearch(query)}>
+                <CustomText
+                  key={index}
+                  text={query}
+                  size={14}
+                  weight={400}
+                  color={colors.very_light_grey}
+                  style={styles.historyItem}
+                />
+              </TouchableOpacity>
             ))}
           </View>
           {/*categories */}
